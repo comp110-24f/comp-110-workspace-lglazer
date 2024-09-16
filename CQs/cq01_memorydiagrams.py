@@ -1,3 +1,8 @@
+"""Memory Diagrams Challenge Question 01"""
+
+__author__ = "Lizzy Glazer"
+
+
 def total_cost(price: int, tax_rate: float):
     print(price + (price * tax_rate))
 

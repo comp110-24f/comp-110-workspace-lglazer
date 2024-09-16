@@ -1,3 +1,3 @@
-"""Greet you in a southern way"""
-
-print("Howdy!")
+age: int = 10
+age = age + 1
+print(age)
