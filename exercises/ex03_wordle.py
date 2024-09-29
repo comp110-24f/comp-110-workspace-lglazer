@@ -4,28 +4,28 @@ __author__ = "730567393"
 
 
 def input_guess(secret_word_len: int) -> str:
-    word: str = input(f"Enter a {secret_word_len}-character word: ")
+    input_word: str = input(f"Enter a {secret_word_len}-character word: ")
     # creates a global variable called word that takes an input after
     # prompted with a message to enter a word of a specific length
-    while len(word) != secret_word_len:
-        word: str = input(f"That wasn't {secret_word_len} chars! Try again: ")
+    while len(input_word) != secret_word_len:
+        input_word = input(f"That wasn't {secret_word_len} chars! Try again: ")
         # while loop that ensures that the length of inputted guess word is
         # equal to the length of the secret word
-    return word
+    return input_word
 
 
-def contains_char(secret: str, char_guess: str) -> bool:
+def contains_char(secret_word: str, char_guess: str) -> bool:
     # defines a function that takes two parameters, the secret word and
     # then the guess character (one single letter)
-    """"""
+    """Checks a character of the inputted word with the secret word."""
     assert len(char_guess) == 1
     # the assert function ensures that the char_guess argument is only
     # one character
     idx: int = 0
     # creates a local index variable that has an int value of 0 to be used to
     # index through each of the letters in the secret word
-    while idx < len(secret):
-        if secret[idx] == char_guess:
+    while idx < len(secret_word):
+        if secret_word[idx] == char_guess:
             return True
         # the while loop has an if statement contained inside that goes through
         # the secret word and checks each character of the secret word to see if
@@ -78,7 +78,8 @@ def emojified(guess: str, secret: str) -> str:
             num_char += 1
             # an else statement is used if the guess character is not found in the secret word,
             # meaning if the contains_char is == False
-    return print(emoji_str)
+    print(emoji_str)
+    return emoji_str
     # this is the return statement that prints the completed emoji string
 
 
@@ -92,18 +93,18 @@ def main(secret: str) -> None:
         guess: str = input_guess(len(secret))
         # defines a local variable that takes the value of the input of the function input_guess
         emojified(guess, secret)
-        N += 1
         # calls the emojified function with the inputted guess
         # adds one to the variable counting the number of turns after
         # completing the function calls which check for character matches
         # in the inputted guessed word and the defined secret word
         if guess == secret:
             print(f"You won in {N}/6 turns!")
-            exit()
+            return
             # the if statement checks to see if the guessed word is the same as the secret word
             # if that is true and the inputted guess matches the secret word, it prints a statement
             # saying that the user won in a specific number of turns using the N variable that
             # was used to count turns. then the program is exited
+        N += 1
     print("X/6 - Sorry, try again tomorrow!")
     # in the case where the inputted guess is not the secret word after 6 tries,
     # the function prints a statement to share that their guesses were not correct
