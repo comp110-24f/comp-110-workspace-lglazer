@@ -64,5 +64,11 @@ It ensures everyone's VSCode is setup properly for success in the course.
     "runArgs": [
         "--name",
         "comp110-24f"
-    ]
+    ],
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {
+            "installDirectlyFromGitHubRelease": true,
+            "version": "latest"
+        }
+    }
 }
