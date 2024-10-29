@@ -34,6 +34,8 @@ def contains_char(secret_word: str, char_guess: str) -> bool:
         # we iterate through the entire word checking each character by adding 1
         # to the index value after each check. the while loop allows us to
         # evaluate each of the letters in the secret word to check for matches
+
+        # Tester comment
     return False
 
 
